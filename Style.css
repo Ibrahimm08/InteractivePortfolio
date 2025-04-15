@@ -5,28 +5,32 @@ html{
 
 .Container{
     background-color: gainsboro;
+    position: absolute;
     border-radius: 15px;
-    display: grid;
-    height: 660px; width: 550px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 660px; width: 600px;
     margin: 10%;
 }
 
 
 .Block{
     background-color: ghostwhite;
-    border-radius: 10px;
-    order: 1;
-    height: 150px; width: 150px;
-    justify-self: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    align-self: flex-end;
     text-align: center;
+    border-radius: 10px;
+    height: 150px; width: 150px;
     margin-bottom: 30px;
     border: none;
     outline: none;
     cursor: pointer;
     font-size: large;
-    align-self: end;
     overflow: hidden;
     transition: all 0.5s;
 }
@@ -35,6 +39,21 @@ html{
     scale: 110%;
 }
 
+.norm{
+    position: absolute;
+    left: 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 190px;
+}
+.norm ~ .norm{
+    left: 200px;
+}
+.norm ~ .norm ~ .norm{
+    left: 400px;
+}
 .norm h1{
     font-size: 0;
     width: 0;
@@ -42,28 +61,30 @@ html{
 }
 
 .large{
+    display: flex;
+    position: absolute;
+    align-self: flex-end;
+    top: 0;
+    right: 0;
     background-color: rgb(252, 125, 252);   
-    margin-bottom: 130px;
     z-index: 1;
-    scale:300%;
-    width: 170px;
-    grid-column-start: 1; grid-column-end: 4;
-    grid-row-start: 1; grid-row-end: 3;
-    order: 1;
+    flex-grow: 1;
+    width: 100%;
+    height: 70%;
+    transition: all 0.5s;
 }
 .large .blocklable{
     background-color: gainsboro;
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: 0;
+    right: 0;
     border-radius: 50px;
     padding: 10px;
     font-size: small;
-    scale: 60%;
     float: right;
 }
 .large h1{
-    font-size: 100%;
+    font-size: large;
     width: auto;
     height: auto;
     text-align: start;
